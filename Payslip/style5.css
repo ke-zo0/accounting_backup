@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3ebe1;
+  color: #333;
+  margin-left: 4%;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.header h1 {
+  margin-bottom: 0;
+}
+
+.header p {
+  color: #7a6e63;
+  margin-top: 0.25rem;
+}
+
+.tabs {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+.tabs span {
+  cursor: pointer;
+  color: #777;
+}
+
+.tabs span.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+.table-controls {
+  margin: 1rem 0;
+}
+
+select {
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+thead {
+  background: #d4ac8f;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+button.view {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+button.approve {
+  background: #4d70b8;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.decline {
+  background: #e94141;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-controls button {
+  padding: 4px 8px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  background: #e5e8eb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.page-controls button.active {
+  background: #b0c4d9;
+}

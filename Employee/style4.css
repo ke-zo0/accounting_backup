@@ -1,0 +1,182 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f3ef;
+  color: #333;
+  margin-left: 4%;
+}
+
+.container {
+  padding: 2rem;
+  margin-top: 2.5rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.header p {
+  margin: 0;
+  color: #888;
+}
+
+.top-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.top-controls select,
+.top-controls input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  transition: border 0.2s;
+}
+.top-controls select:focus,
+.top-controls input[type="text"]:focus {
+  border: 1.5px solid #0c1c37;
+  outline: none;
+}
+
+.top-controls button.add-btn {
+  background: #0c1c37;
+  color: #fff;
+  border: none;
+  padding: 9px 22px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.top-controls button.add-btn:hover {
+  background: #122f5e;
+}
+
+.top-controls button {
+  background: #f1f1f1;
+  color: #222;
+  border: 1px solid #bbb;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.top-controls button:not(.add-btn):hover {
+  background: #eaeaea;
+}
+
+#searchBtnTable {
+  background: #67917D;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+#searchBtnTable:hover {
+  background: #0849;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+thead tr {
+  background-color: #122f5e;
+  color: #fff;
+}
+
+th, td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 1.05rem;
+}
+
+th {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr {
+  background: #fff;
+  transition: background 0.2s;
+}
+
+tbody tr:hover {
+  background: #f0f4fa;
+}
+
+td img.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.action-icons span {
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.action-icons span:hover {
+  color: #1e3a8a;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 10px 2vw;
+  }
+  table {
+    min-width: 600px;
+  }
+}
+
+#positionFilterTable {
+  color: #888;
+  font-weight: 400;
+}
+#positionFilterTable:focus {
+  outline: none;
+}
+#positionFilterTable option[disabled][selected][hidden] {
+  color: #bbb !important;
+  font-weight: 400;
+}
+#positionFilterTable option:not([disabled][selected][hidden]) {
+  color: #222;
+  opacity: 1;
+  font-weight: 400;
+}
+#positionFilterTable:invalid {
+  color: #bbb;
+}
+#positionFilterTable:not(:invalid) {
+  color: #222;
+}
+
+/* Lighter style for select when placeholder is selected */
+#positionFilterTable.placeholder-selected {
+  color: #bbb;
+}

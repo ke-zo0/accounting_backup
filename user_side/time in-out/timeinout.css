@@ -1,0 +1,233 @@
+body {
+  background: #f6f0e7;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ede7de;
+  padding: 8px 20px;
+  border-bottom: 1.5px solid #bdb6a9;
+  min-height: 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  box-shadow: 0 2px 8px #bdb6a9;
+}
+.logo-box {
+  display: flex;
+  align-items: center;
+}
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.notification-icon {
+  height: 28px;
+  cursor: pointer;
+}
+.profile-dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.profile-pic {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.profile-name {
+  font-weight: 500;
+  margin-right: 6px;
+}
+.dropdown-arrow {
+  height: 18px;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #bdb6a9;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px #bdb6a9;
+  min-width: 140px;
+  z-index: 200;
+}
+.dropdown-menu.show {
+  display: block;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  color: #222;
+  text-decoration: none;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+.logout {
+  color: #e74c3c;
+}
+.page-center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+.timeinout-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #bdb6a9;
+  border: 2px solid #bdb6a9;
+  padding: 48px 48px 36px 48px;
+  max-width: 540px;
+  min-width: 380px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: max-width 0.2s, min-width 0.2s, padding 0.2s;
+}
+.timeinout-title {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+.timeinout-datetime {
+  font-size: 2em;
+  font-family: 'Jomolhari', serif;
+  text-align: center;
+  margin-bottom: 24px;
+  word-break: break-word;
+}
+.timeinout-actions {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.timein-btn, .timeout-btn {
+  font-size: 1.2em;
+  padding: 12px 36px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 2px 4px #bdb6a9;
+  margin-bottom: 8px;
+  transition: font-size 0.2s, padding 0.2s;
+}
+.timein-btn {
+  background: #4f6bed;
+  color: #fff;
+}
+.timeout-btn {
+  background: #e74c3c;
+  color: #fff;
+}
+.back-btn {
+  position: static;
+  margin-right: 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #4fd1a1;
+  color: #fff;
+  border: none;
+  font-size: 1.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #bdb6a9;
+  cursor: pointer;
+  z-index: 10;
+  flex-shrink: 0;
+  transition: width 0.2s, height 0.2s, font-size 0.2s, margin 0.2s;
+}
+.back-btn:hover {
+  background: #38b68c;
+}
+@media (max-width: 900px) {
+  .timeinout-card {
+    max-width: 85vw;
+    width: 100%;
+    min-width: 0;
+    padding: 18px 2vw 18px 2vw;
+    min-height: 0;
+  }
+  .page-center-container {
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .back-btn {
+    margin: 0 0 18px 0;
+    align-self: center;
+    width: 44px;
+    height: 44px;
+    font-size: 1.6em;
+  }
+  .timeinout-title {
+    font-size: 1.2em;
+  }
+  .timeinout-datetime {
+    font-size: 1.3em;
+  }
+  .timein-btn, .timeout-btn {
+    font-size: 1.1em;
+    padding: 12px 24px;
+  }
+}
+@media (max-width: 600px) {
+  .timeinout-card {
+    max-width: 80vw;
+    width: 100%;
+    padding: 10px 1vw 10px 1vw;
+    min-height: 0;
+  }
+  .back-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    margin-bottom: 12px;
+  }
+  .timeinout-title {
+    font-size: 1.1em;
+  }
+  .timeinout-datetime {
+    font-size: 1.1em;
+  }
+  .timein-btn, .timeout-btn {
+    font-size: 1em;
+    padding: 10px 10px;
+    border-radius: 12px;
+  }
+  .timeinout-actions {
+    gap: 10px;
+    margin-top: 14px;
+  }
+}

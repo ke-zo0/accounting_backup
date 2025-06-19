@@ -1,0 +1,188 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;              
+  min-height: 100vh;
+  height: auto;
+  max-height: 100vh;
+  background-color: #d8d8da; 
+  color: white;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  z-index: 50;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.expanded {
+  width: 200px;              
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.sidebar-item:hover {
+  background-color: #535455;
+}
+
+.sidebar-item img {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+}
+
+.label {
+  margin-left: 12px;
+  opacity: 0;
+  color: #000;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+.sidebar.expanded .label {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar.expanded ~ .admin-dashboard {
+  margin-left: 200px; 
+}
+
+/* Minimal scrollbar styling */
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.sidebar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.submenu {
+  max-height: 0;          
+  overflow: hidden;
+  background-color: #d8d8da; 
+  margin-left: 45px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 45px);
+}
+
+.submenu.open {
+  max-height: 400px;      
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  overflow: visible;
+}
+
+.submenu-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: rgb(88, 87, 87);
+  white-space: nowrap;
+  user-select: none;
+  font-style: italic;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.submenu-item:hover {
+  background-color: #8e8f8f;
+  text-decoration: none;
+}
+
+.submenu-arrow {
+  margin-left: auto;
+  width: 5px;
+  height: 5px;
+  transition: transform 0.3s ease;
+  opacity: 0;
+}
+
+.sidebar.expanded .submenu-arrow {
+  opacity: 1;
+}
+
+.sidebar-item-with-submenu.open > .submenu-arrow {
+  transform: rotate(90deg);
+}
+
+.sidebar-logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 10px 0;
+  position: sticky;
+  top: 0;
+  background-color: #d8d8da;
+  z-index: 1;
+}
+
+.sidebar-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Add styles for sidebar links */
+.sidebar-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebar-item a:hover {
+  text-decoration: none;
+}
+
+/* Bottom items container */
+.sidebar-bottom-items {
+  position: relative;
+  width: 100%;
+  background-color: #d8d8da;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.sidebar-divider {
+  height: 2px;
+  background-color: gray;
+  margin: 20px 15px;
+}
+
+/* Add padding to the bottom of the main content to prevent overlap */
+.sidebar::after {
+  content: '';
+  display: block;
+  height: 120px; /* Adjust this value based on the height of your bottom items */
+}
